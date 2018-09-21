@@ -1,0 +1,396 @@
+@import "fonts"
+@import "vars"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	background: #fff
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+button, input[type=submit]
+	outline: none!important
+
+button
+	cursor: pointer
+
+ul
+	padding-left: 0
+	margin-bottom: 0
+
+::placeholder
+	font-family: "Roboto"
+	color: rgb(141, 143, 156)
+	font-style: italic
+	line-height: 1.813
+
+a
+	color: rgb(0, 8, 59)
+	&:hover, &:active
+		color: rgb(105, 169, 225)
+
+main
+	background: url('../img/Sank-Peterburg-9.png') repeat-y center /contain
+	min-height: 2000px
+
+.icons-left
+	height: 27px
+	display: flex
+	align-items: center
+	padding-left: 35px
+	background: url('../img/icons-sprite.png') no-repeat
+	&_mail
+		background-position:  0 6px
+	&_tel
+		background-position:  0 -24px
+
+.blue-button
+	display: inline-block
+	border: none
+	border-radius: 5px
+	background-color: rgb(53, 171, 228)
+	box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25)
+	color: #fff
+	font-family: "Open Sans"
+	color: rgb(255, 255, 255)
+	font-weight: bold
+	padding: 10px 20px
+	&:hover
+		background-color: #86c0f2
+
+.grey-button
+	border: none
+	border-radius: 5px
+	background-color: rgb(240, 240, 240)
+	box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.25)
+	text-decoration: underline
+	padding: 10px 20px
+	&:hover
+		background-color: #86c0f2
+		color: #fff
+
+.header__top
+	height: 135px
+	padding-top: 30px
+	display: flex
+
+.header__logo-text
+	font-size: 14px
+	font-family: "Roboto"
+	color: rgb(74, 75, 82)
+	line-height: 1.5
+	padding-left: 10px
+	padding-top: 15px
+
+.header__search-social
+	width: 480px
+	padding-left: 38px
+
+.header__social
+	display: flex
+	justify-content: flex-end
+	padding-right: 34px
+	margin-bottom: 20px
+	a
+		display: block
+		height: 33px
+		width: 33px
+		margin-left: 17px
+
+.header__search-form
+	display: flex
+	height: 38px
+
+.search-form__submit
+	display: inline-block
+	border: none
+	background: url('../img/search-button.png') no-repeat center top
+	width: 22px
+	height: 32px
+	margin-right: 12px
+
+.search-form__input
+	border: none
+	border-bottom: 1px solid $bd-color
+	display: inline-block
+	width: 350px
+	padding: 0 0 5px 10px
+
+
+.header__contacts
+	padding-left: 36px
+	padding-top: 10px
+.header-contacts__block
+	margin-bottom: 10px
+	&:last-child
+		margin-bottom: 0
+	a
+		font-size: 14px
+		font-weight: 500
+
+
+
+
+
+
+
+.header__order-buttons
+	margin-left: auto
+	width: 210px
+	display: flex
+	flex-direction: column
+	align-items: flex-end
+
+.order-buttons
+
+	&__call
+		width: 100%
+		margin-bottom: 5px
+	&__cost
+		width: 100%
+		font-size: 12px
+		text-transform: uppercase
+		padding-right: 0
+		padding-left: 25px
+		background: url('../img/calculator.png') no-repeat 10px center rgb(240, 240, 240)
+
+//Главное меню
+.header__nav-wrapper
+	background: url('../img/nav-bg.png') repeat-x left center #f5f5f5
+
+.header__menu
+	display: flex
+	justify-content: space-around
+	list-style-type: none
+	&> li
+		text-transform: uppercase
+		padding: 20px 0
+		position: relative
+		a:hover
+			color: rgb(67, 94, 255)
+			text-decoration: none
+		&:after
+			content: ''
+			position: absolute
+			background-color: rgb(53, 171, 228)
+			height: 4px
+			bottom: 0
+			left: 0
+			width: 100%
+			display: block
+			transform: scaleX(0)
+			transition: transform 0.5s ease
+		&:hover > ul
+			display: flex
+		&:hover:after
+			transform: scaleX(1)
+
+
+.header__submenu
+	display: none
+	position: absolute
+	top: 100%
+	left: 50%
+	transform: translateX(-50%)
+	flex-direction: column
+	list-style-type: none
+	white-space: nowrap
+	background-color: #fff
+	z-index: 99999
+	li
+		text-transform: none
+		line-height: 1.813
+		text-align: center
+		padding: 5px 15px
+		a:hover
+			color: rgb(67, 94, 255)
+			text-decoration: none
+
+//Slider
+.slider
+	&__item
+		height: 500px
+		background: url('../img/slider-img.png') no-repeat center /cover
+		& .container
+			height: 100%
+	&__inner
+		height: 100%
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		justify-content: center
+	&__info
+		margin-bottom: 50px
+		background-color: rgba(0, 0, 0, 0.6)
+		padding: 30px 30px
+	&__info-title
+		font-weight: 900
+		font-size: 48px
+		color: rgb(255, 255, 255)
+		text-transform: uppercase
+		line-height: 0.604
+		margin-bottom: 25px
+	&__info-subtitle
+		font-size: 26px
+		font-weight: 500
+		color: rgb(255, 255, 255)
+		text-transform: uppercase
+		line-height: 1.115
+		margin-bottom: 0
+		& span
+			font-weight: 900
+			font-size: 48px
+			color: #35abe4
+	&__item-link
+		margin-left: 25px
+		&:hover
+			color: #fff
+			text-decoration: none
+	& .owl-dots
+		position: absolute
+		bottom: 20px
+		width: 100%
+		text-align: center
+	& button.owl-dot
+		display: inline-block
+		width: 15px
+		height: 15px
+		background-color: #fff
+		z-index: 999
+		border-radius: 50%
+		margin-right: 10px
+		&:last-child
+			margin-right: 0
+		&.active
+			background-color: #35abe4
+
+
+.aaaa
+	height: 20px
+	background-color: green
+
+.section-single
+	padding-top: 60px
+
+.section__title
+	font-size: 28px
+	color: rgb(0, 0, 0)
+	font-weight: 700
+	text-transform: uppercase
+	position: relative
+	padding-bottom: 10px
+	margin-bottom: 50px
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		bottom: 0
+		left: 0
+		width: 110px
+		height: 4px
+		background-color: #35abe4
+
+.section-services .row > div
+	padding-left: 5px
+	padding-right: 5px
+
+//Карточка услуг
+.serv-card
+	display: block
+	height: 290px
+	width: 100%
+	position: relative
+	overflow: hidden
+	margin-bottom: 10px
+	&__overlay
+		z-index: 10
+	&__title
+		text-align: center
+		margin-bottom: 0
+		display: flex
+		width: 100%
+		height: 100%
+		justify-content: center
+		align-items: center
+		position: absolute
+		z-index: 20
+		font-size: 24px
+		color: rgb(255, 255, 255)
+		font-weight: 700
+		text-transform: uppercase
+		line-height: 1.208
+		transition: all 1s ease
+	&__bg
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-repeat: no-repeat
+		background-position: center
+		background-size: cover
+		transition: all 1s ease
+	&:hover .serv-card__bg
+		transform: scale3d(1.1, 1.1, 1)
+	&:hover .serv-card__title
+		font-size: 28px
+
+.section-about__text
+	line-height: 1.813
+	margin-bottom: 50px
+
+
+.section-about__info
+	display: flex
+	flex-direction: column
+	a
+		position: relative
+		font-weight: 700
+		padding-left: 35px
+		padding-right: 35px
+		align-self: flex-end
+		&:after
+			content: '>'
+			font-size: 16px
+			position: absolute
+			top: 50%
+			right: 20px
+			transform: translateY(-50%)
+
+.order-transport
+	max-width: 440px
+
+
+
+
